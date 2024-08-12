@@ -1,0 +1,56 @@
+<!-- <div class="container">
+  <div class="breadcrumb">
+    <a href="#">Home</a> / <a href="#">Products</a> /
+    <a href="#">Smart Phones</a> / <span>iPhone</span>
+  </div>
+
+  <div class="main-content">
+    <aside class="sidebar">
+      <h4>Products</h4>
+      <ul>
+        <li *ngFor="let category of categories">
+          <input type="radio" name="category" value="{{ category.slug }}" />
+          <label for="{{ category.slug }}">{{ category.name }}</label>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="products">
+      <div class="product-card" *ngFor="let product of products">
+        <div class="discount-tag">-{{ product.discountPercentage }}%</div>
+        <img [src]="product.thumbnail" alt="{{ product.title }}" />
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <p class="price">
+          <span class="old-price">{{ product.price }} USD</span>
+          {{ product.price }} USD
+        </p>
+        <p>Brand: {{ product.brand }}</p>
+        <p>Category: {{ product.category }}</p>
+        <p>In stock: {{ product.stock }}</p>
+        <div class="rating">
+          ⭐ {{ product.rating }} ({{ product.reviews.length }})
+        </div>
+        <button>Add to Cart</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="pagination">
+    <a href="#" class="prev">«</a>
+    <a href="#" *ngFor="let page of pages">{{ page }}</a>
+    <a href="#" class="next">»</a>
+  </div>
+</div> -->
+
+<app-breadcramps></app-breadcramps>
+<div class="main-container">
+  <app-side-bar class="sidebar"></app-side-bar>
+  <div class="product-list">
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product-card>
+  </div>
+</div>
+<app-pagination [totalItems]="10"></app-pagination>

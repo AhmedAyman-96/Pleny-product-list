@@ -1,0 +1,22 @@
+<div class="pagination">
+  <button class="page-link" (click)="prevPage()" [disabled]="currentPage === 1">
+    «
+  </button>
+
+  <button
+    class="page-link"
+    *ngFor="let page of pages; let i = index"
+    (click)="selectPage(i + 1)"
+    [class.active]="currentPage === i + 1"
+  >
+    {{ i + 1 }}
+  </button>
+
+  <button
+    class="page-link"
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages"
+  >
+    »
+  </button>
+</div>

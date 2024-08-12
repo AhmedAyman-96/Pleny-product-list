@@ -1,0 +1,34 @@
+<main>
+  <div class="login-container">
+    <div class="login-logo">
+      <img src="logo-medium.svg" alt="Login Icon" />
+    </div>
+    <h1>Log in to your account</h1>
+    <p>Welcome back! Please enter your details.</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div *ngIf="email?.invalid && email?.touched" class="error">
+        Email is required
+      </div>
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div *ngIf="password?.invalid && password?.touched" class="error">
+        Password is required
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Sign in</button>
+    </form>
+  </div>
+</main>

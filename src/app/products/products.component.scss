@@ -1,0 +1,18 @@
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Ensures spacing between the sidebar and the product list */
+  gap: 1rem; /* Add space between the sidebar and the product list */
+  padding: 1rem;
+
+  .sidebar {
+    flex: 0 0 220px; /* Sidebar takes up a fixed width */
+    max-width: 220px; /* Ensures the sidebar doesn't exceed this width */
+  }
+
+  .product-list {
+    flex: 1; /* The product list takes up the remaining space */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adds space between product cards */
+  }
+}

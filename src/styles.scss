@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #00bfa5;
+  --secondary-color: #ffffff;
+  --border-color: #dddddd;
+  --card-bg-color: #f8f9fa;
+  --text-muted-color: #6c757d; /* Muted color */
+  --star-color: #cccccc; /* Default star color (unfilled) */
+  --star-filled-color: #ffc107; /* Star filled color */
+  --discount-badge-color: #ff4c4c; /* Discount badge color */
+  --border-radius: 8px;
+  --padding: 20px;
+  --max-width: 1200px;
+
+  --background-color: #f9f9f9;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  // Responsive breakpoints
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
