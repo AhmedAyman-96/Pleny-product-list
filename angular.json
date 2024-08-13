@@ -27,9 +27,6 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "stylePreprocessorOptions": {
-            "includePaths": ["src/shared"]
-          },
           "options": {
             "outputPath": "dist/pleny",
             "index": "src/index.html",
@@ -43,7 +40,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            ],
             "scripts": []
           },
           "configurations": {

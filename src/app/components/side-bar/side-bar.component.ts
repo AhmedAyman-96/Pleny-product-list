@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -7,10 +7,17 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './side-bar.component.scss'
 })
 export class SideBarComponent {
+  @Output() categoryChanged = new EventEmitter<string>();
+  public currentCategory: string = '';
   public categories: any[] = [];
   constructor(private productsService: ProductsService) {
     productsService.getCategories().subscribe((resp: any) => {
       this.categories = resp;
     }, err => console.error(err))
+  }
+
+
+  onCategoryChange(category: string): void {
+    this.categoryChanged.emit(category);
   }
 }

@@ -1,12 +1,15 @@
 :root {
-  --primary-color: #00bfa5;
+  --primary-color: #41cccc;
   --secondary-color: #ffffff;
   --border-color: #dddddd;
   --card-bg-color: #f8f9fa;
+  --hover-bg-color: #f1f1f1;
+  --text-primary-color: #344054;
   --text-muted-color: #6c757d; /* Muted color */
   --star-color: #cccccc; /* Default star color (unfilled) */
   --star-filled-color: #ffc107; /* Star filled color */
   --discount-badge-color: #ff4c4c; /* Discount badge color */
+  --hover-color: #000000; /* Text color on hover for non-active buttons */
   --border-radius: 8px;
   --padding: 20px;
   --max-width: 1200px;

@@ -14,18 +14,20 @@
     </div>
 
     <div class="product-meta">
-      <p>Brand: {{ product.brand }}</p>
-      <p>Category: {{ product.category }}</p>
-      <p>In stock: {{ product.inStock }}</p>
+      <p>
+        Brand: <b>{{ product.brand }} </b>
+      </p>
+      <p>
+        Category: <b>{{ product.category }}</b>
+      </p>
+      <p>
+        In stock: <b>{{ product.stock }}</b>
+      </p>
     </div>
 
     <div class="product-reviews">
       <span class="rating">
-        <i
-          class="fa fa-star"
-          *ngFor="let star of [].constructor(5); let i = index"
-          [ngClass]="{ filled: i < product.rating }"
-        ></i>
+        ⭐
         {{ product.rating.toFixed(2) }}
       </span>
       <span class="reviews">({{ product.reviews.length }})</span>

@@ -61,7 +61,7 @@ input[type="password"] {
 button {
   padding: 10px;
   background-color: #34d0ba;
-  color: black;
+  color: var(--text-primary-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;

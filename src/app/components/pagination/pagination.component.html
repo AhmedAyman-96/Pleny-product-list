@@ -1,22 +1,39 @@
-<div class="pagination">
-  <button class="page-link" (click)="prevPage()" [disabled]="currentPage === 1">
-    «
-  </button>
+<nav>
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <button
+        [disabled]="currentPage === 1"
+        class="page-link"
+        (click)="onPageChange(currentPage - 1)"
+      >
+        &lt;
+      </button>
+    </li>
 
-  <button
-    class="page-link"
-    *ngFor="let page of pages; let i = index"
-    (click)="selectPage(i + 1)"
-    [class.active]="currentPage === i + 1"
-  >
-    {{ i + 1 }}
-  </button>
+    <li
+      *ngFor="let page of pages"
+      class="page-item"
+      [class.active]="page === currentPage"
+      [class.ellipsis]="page === -1"
+    >
+      <button
+        class="page-link"
+        *ngIf="page !== -1"
+        (click)="onPageChange(page)"
+      >
+        {{ page }}
+      </button>
+      <span *ngIf="page === -1"> &hellip; </span>
+    </li>
 
-  <button
-    class="page-link"
-    (click)="nextPage()"
-    [disabled]="currentPage === totalPages"
-  >
-    »
-  </button>
-</div>
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <button
+        [disabled]="currentPage === totalPages"
+        class="page-link"
+        (click)="onPageChange(currentPage + 1)"
+      >
+        &gt;
+      </button>
+    </li>
+  </ul>
+</nav>

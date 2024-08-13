@@ -10,10 +10,14 @@ export class ProductsService {
   }
 
   public getProducts(skip: number, limit: number) {
-    return this.http.get(`${this.BASE_URL}?limit=${limit}`);
+    return this.http.get(`${this.BASE_URL}?skip=${skip}&limit=${limit}`);
   }
 
   public getCategories() {
     return this.http.get(`${this.BASE_URL}/categories`)
+  }
+
+  public getProductByCategory(category: string, skip: number, limit: number = 0) {
+    return this.http.get(`${this.BASE_URL}/category/${category}?limit=${limit}&skip=${skip}`)
   }
 }
