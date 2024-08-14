@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   private readonly BASE_URL = 'https://dummyjson.com/auth/login';
   private tokenKey = 'authToken';
+  // maintain auth state using subjects
   private authStatusSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
   public authStatus$ = this.authStatusSubject.asObservable();
 

@@ -13,6 +13,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    //build login form
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -29,7 +30,6 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-
       this.authService.authinticateUser({ ...this.loginForm.value, username: "emilys", password: "emilyspass" })
         .subscribe((resp: any) => {
           this.authService.login(resp.token);

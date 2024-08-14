@@ -27,7 +27,6 @@ export class ProductsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
 
   ) {
-
   }
 
   ngOnInit(): void {
@@ -65,13 +64,14 @@ export class ProductsComponent implements OnInit {
     // logic to get product by categories
     this.clearSelection = false;
     this.selectedCategory = category;
+    // if not generic category get products based on selections
     if (category !== "all") {
       this.currentPage = 1;
       const skip = this._calculateSkip(this.currentPage);
       this.getProductByCategory(category, skip);
       this.router.navigateByUrl(`/products/${category}`, { skipLocationChange: true })
     } else {
-
+      // if generic selection clear all selected categories from UI
       this.clearSelection = true;
     }
   }
@@ -117,6 +117,7 @@ export class ProductsComponent implements OnInit {
   }
 
   private _handleCategorySelection() {
+    // get the current url and handle category selection upon it's change
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         const url = '/' + this.activatedRoute.pathFromRoot
@@ -124,21 +125,18 @@ export class ProductsComponent implements OnInit {
           .filter(urlSegments => !!urlSegments[0])
           .map(([urlSegment]) => urlSegment.path)
           .join('/');
-        console.log("url", url)
         if (url.includes("all")) {
           this.clearSelection = true;
           this.selectedCategory = "all";
           this.currentPage = 1;
           this._getProducts(this.currentPage);
-          console.log("value", val instanceof NavigationEnd)
-
         }
-
       }
     });
   }
 
   private _handleCart() {
+    // implement cart logic to disable any ADD_TO_CART button if the added is equal to the stock
     this.productsService.productCart$.subscribe(cart => {
       this.products = this.products.map(product => {
         const productInCart = cart.filter(prod => prod.id === product.id);

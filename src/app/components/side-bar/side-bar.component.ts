@@ -22,7 +22,6 @@ export class SideBarComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
 
     if (this.clearSelection) {
-      console.log("clear is true")
       this.inputs.forEach(input => input.nativeElement.checked = false);
     }
   }
