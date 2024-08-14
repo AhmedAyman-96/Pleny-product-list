@@ -1,0 +1,106 @@
+/* header.component.scss */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .logo a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+
+      &.active-link {
+        color: var(--primary-color); // Example: Change color when active
+        font-weight: bold; // Example: Make the font bold when active
+        border-bottom: 2px solid var(--primary-color); // Example: Add a border below the active link
+      }
+    }
+  }
+
+  .search-container {
+    flex-grow: 1;
+    max-width: 400px;
+    margin: 0 1.5rem;
+  }
+
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .search-button {
+      position: absolute;
+      left: 1rem;
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 1rem 0.5rem 2.5rem; // Adjust padding to accommodate the button on the left
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: 1rem;
+      outline: none;
+    }
+  }
+
+  .cart-container {
+    position: relative;
+  }
+
+  .cart-button {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-muted-color);
+    cursor: pointer;
+    padding: 0;
+
+    .cart-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border-radius: 50%;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -3,10 +3,12 @@
   <ul>
     <li *ngFor="let category of categories">
       <input
+        #input
         (change)="onCategoryChange(category.slug)"
         type="radio"
         name="category"
         value="{{ category.slug }}"
+        [checked]=""
       />
       {{ category.name }}
     </li>

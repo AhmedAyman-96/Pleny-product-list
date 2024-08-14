@@ -9,7 +9,10 @@ const routes: Routes = [{
   path: 'products',
   loadChildren: () => import(`./products/products.module`).then((r) => r.ProductsModule),
   // canActivate: [AuthGuard]
-
+}, {
+  path: '',
+  redirectTo: 'products',
+  pathMatch: 'full',
 }];
 
 @NgModule({

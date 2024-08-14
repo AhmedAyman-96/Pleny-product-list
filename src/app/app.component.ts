@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Pleny';
+  public title = 'Pleny';
+  public isAuthenticated = false;
+  constructor(private autheService: AuthService) {
+    autheService.authStatus$.subscribe(isAuthenticated => {
+      this.isAuthenticated = isAuthenticated;
+    })
+  }
 }

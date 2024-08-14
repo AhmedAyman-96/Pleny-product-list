@@ -47,6 +47,7 @@
 <div class="main-container">
   <app-side-bar
     (categoryChanged)="onCategoryChange($event)"
+    [clearSelection]="clearSelection"
     class="sidebar"
   ></app-side-bar>
   <div class="product-list">

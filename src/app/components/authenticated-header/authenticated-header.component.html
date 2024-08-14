@@ -1,0 +1,55 @@
+<!-- header.component.html -->
+<header class="header">
+  <div class="logo">
+    <a [routerLink]="['/routePath']" routerLinkActive="router-link-active">
+      <img src="logo.svg" alt="ClickTik Logo" class="logo-image" />
+      ClickTik
+    </a>
+  </div>
+  <nav class="navigation">
+    <a routerLink="/products" routerLinkActive="active-link">Home</a>
+  </nav>
+
+  <div class="search-container">
+    <div class="search-wrapper" *ngIf="isAuthenticated">
+      <button class="search-button" (click)="search(input.value)">
+        <i class="fas fa-search"></i>
+      </button>
+      <input
+        type="text"
+        #input
+        (keyup.enter)="search(input.value)"
+        placeholder="Search..."
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <div class="navigation">
+    <div class="cart-container">
+      <button
+        class="cart-button"
+        *ngIf="isAuthenticated"
+        (click)="navigateToCart()"
+      >
+        <i class="fas fa-shopping-cart"></i>
+        <span *ngIf="cartItemCount > 0" class="cart-badge">{{
+          cartItemCount
+        }}</span>
+      </button>
+    </div>
+    <a *ngIf="isAuthenticated" href="#">Account</a>
+    <a
+      *ngIf="!isAuthenticated"
+      [routerLink]="['/login']"
+      routerLinkActive="active-link"
+      >Login</a
+    >
+    <a
+      *ngIf="isAuthenticated"
+      [routerLink]="['/logout']"
+      routerLinkActive="active-link"
+      >Logout</a
+    >
+  </div>
+</header>

@@ -8,6 +8,8 @@ import { PaginationComponent } from '../components/pagination/pagination.compone
 import { BreadcrampsComponent } from '../components/breadcramps/breadcramps.component';
 import { SideBarComponent } from '../components/side-bar/side-bar.component';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomReuseStrategy } from '../stratigies/custom.reuse.strategy';
 
 
 @NgModule({
@@ -21,6 +23,12 @@ import { ProductCardComponent } from '../components/product-card/product-card.co
   imports: [
     CommonModule,
     ProductsRoutingModule
+  ],
+  providers: [
+    {
+      provide: RouteReuseStrategy,
+      useClass: CustomReuseStrategy
+    }
   ]
 })
 export class ProductsModule { }

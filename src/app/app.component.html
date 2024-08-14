@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="!true">
   <nav>
     <div class="logo">
       <img src="logo.svg" alt="ClickTik Logo" />
@@ -10,6 +10,7 @@
     </div>
   </nav>
 </header>
+<app-authenticated-header *ngIf="true"></app-authenticated-header>
 <router-outlet />
 <footer>
   <div class="footer-content">

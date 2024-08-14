@@ -9,8 +9,8 @@
     <p class="product-description">{{ product.description }}</p>
 
     <div class="product-price">
-      <span class="original-price">{{ product.originalPrice }} USD</span>
-      <span class="discounted-price">{{ product.price }} USD</span>
+      <span class="original-price">{{ product.price }} USD</span>
+      <span class="discounted-price">{{ product.newPrice }} USD</span>
     </div>
 
     <div class="product-meta">
@@ -33,6 +33,12 @@
       <span class="reviews">({{ product.reviews.length }})</span>
     </div>
 
-    <button class="add-to-cart-btn">ADD TO CART</button>
+    <button
+      class="add-to-cart-btn"
+      [disabled]="product.isDisabled"
+      (click)="addProductToCart()"
+    >
+      ADD TO CART
+    </button>
   </div>
 </div>
