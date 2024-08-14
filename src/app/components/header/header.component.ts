@@ -3,11 +3,11 @@ import { ProductsService } from '../../services/products.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-authenticated-header',
-  templateUrl: './authenticated-header.component.html',
-  styleUrl: './authenticated-header.component.scss'
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class AuthenticatedHeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   public cartItemCount = 0;
   public isAuthenticated = false;
   constructor(private productService: ProductsService, private authService: AuthService) { }

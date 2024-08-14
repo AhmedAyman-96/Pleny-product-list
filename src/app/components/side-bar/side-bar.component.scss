@@ -5,6 +5,7 @@
   border-radius: var(--border-radius);
   h3 {
     margin-top: 0;
+    margin: 1rem 1rem 1rem 0;
   }
 
   ul {
@@ -16,8 +17,31 @@
       display: flex;
       align-items: center;
 
-      input {
+      input[type="radio"] {
         margin-right: 0.5rem;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        outline: none;
+        border: 3px solid gray;
+      }
+
+      input[type="radio"]:before {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 60%;
+        margin: 20% auto;
+        border-radius: 50%;
+      }
+
+      input[type="radio"]:checked:before {
+        background: var(--primary-color);
+      }
+
+      input[type="radio"]:checked {
+        border-color: var(--primary-color);
       }
     }
   }

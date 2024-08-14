@@ -1,42 +1,7 @@
-/* Footer Styling */
-footer {
-  background-color: #1f2a37;
-  color: #c3cdd5;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-}
-
-.footer-logo img {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.footer-rights {
-  color: #c3cdd5;
-}
-
 @media (max-width: 768px) {
   .login-container {
     width: 90%;
     padding: 20px;
-  }
-
-  .footer-content {
-    flex-direction: column;
   }
 }
 
